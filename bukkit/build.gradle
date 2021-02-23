@@ -18,6 +18,14 @@ dependencies {
         exclude(module: 'bukkit')
     }
     compileOnly 'lilypad.client.connect:api:0.0.1-SNAPSHOT'
+    implementation 'org.geysermc:floodgate-bukkit:1.0-SNAPSHOT'
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        expand 'pluginVersion': project.ext.fullVersion
+        include 'plugin.yml'
+    }
 }
 
 shadowJar {

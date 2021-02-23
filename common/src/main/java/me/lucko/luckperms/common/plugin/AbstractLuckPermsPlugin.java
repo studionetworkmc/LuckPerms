@@ -39,6 +39,7 @@ import me.lucko.luckperms.common.event.AbstractEventBus;
 import me.lucko.luckperms.common.event.EventDispatcher;
 import me.lucko.luckperms.common.event.gen.GeneratedEventClass;
 import me.lucko.luckperms.common.extension.SimpleExtensionManager;
+import me.lucko.luckperms.common.floodgate.FloodgateManager;
 import me.lucko.luckperms.common.http.BytebinClient;
 import me.lucko.luckperms.common.inheritance.InheritanceGraphFactory;
 import me.lucko.luckperms.common.locale.Message;
@@ -453,5 +454,10 @@ public abstract class AbstractLuckPermsPlugin implements LuckPermsPlugin {
             return "LuckyPerms";
         }
         return "LuckPerms";
+    }
+
+    @Override
+    public Optional<FloodgateManager> getFloodgateManager() {
+        return Optional.empty();
     }
 }

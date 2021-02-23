@@ -20,8 +20,10 @@ api-version: 1.13
 loadbefore: [Vault]
 
 # Soft depend on LilyPad for messaging service impl
+# Soft depend on Floodgate for integration with user checking
 # Soft depend on ViaVersion for adventure protocol facet
-softdepend: [LilyPad-Connect, ViaVersion]
+softdepend: [LilyPad-Connect, ViaVersion, floodgate-bukkit,]
+
 
 commands:
   luckperms:
