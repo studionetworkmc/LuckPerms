@@ -65,6 +65,7 @@ public class UserInfo extends ChildCommand<User> {
                 target.getUsername().orElse("Unknown"),
                 target.getUniqueId().toString(),
                 UniqueIdType.determineType(target.getUniqueId(), plugin).describe(),
+                plugin.getFloodgateManager().isPresent() && plugin.getFloodgateManager().get().isFloodgatePlayer(target.getUniqueId()),
                 plugin.getBootstrap().isPlayerOnline(target.getUniqueId())
         );
 
